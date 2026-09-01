@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./App.css";
+import logo from "./assets/my-logo.png";
+import codingImage from "./assets/me-coding.png";
 
 const getWeatherDescription = (code) => {
   if (code === 0) return "☀️ Clear sky";
@@ -26,6 +28,28 @@ function App() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [unit, setUnit] = useState("C");
+
+  const [activePage, setActivePage] = useState("home");
+
+  const showWeather = () => {
+    setActivePage("weather");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const scrollToHomeSection = (sectionId) => {
+    setActivePage("home");
+
+    setTimeout(() => {
+      document.getElementById(sectionId)?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 0);
+  };
+
+const showHome = () => {
+  setActivePage("home");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
   const convertTemperature = (celsius) => {
     if (unit === "C") {
@@ -153,8 +177,244 @@ setCity(locationName);
   };
 
   return (
-    <div className="app">
+      <div className="site-shell">
+  <nav className="navbar">
+    <button className="brand" type="button" onClick={showHome}>
+      <img src={logo} alt="JC logo" className="brand-logo" />
+      <span>JC Weather App.</span>
+    </button>
+
+    <div className="nav-links">
+      <button
+        className={activePage === "home" ? "nav-link active" : "nav-link"}
+        type="button"
+        onClick={showHome}
+      >
+        Home
+      </button>
+
+      <button
+        className={activePage === "weather" ? "nav-link active" : "nav-link"}
+        type="button"
+        onClick={showWeather}
+      >
+        Check Weather
+      </button>
+
+      <button
+      className="nav-link"
+      type="button"
+      onClick={() => scrollToHomeSection("about")}
+    >
+      About Us
+    </button>
+
+    <button
+      className="nav-link"
+      type="button"
+      onClick={() => scrollToHomeSection("contact")}
+    >
+      Contact Us
+    </button>
+
+    </div>
+  </nav>
+
+    {activePage === "home" && (
+      <main className="home-page">
+        <section className="home-hero">
+          <div className="hero-copy">
+            <p className="eyebrow">JC WEATHER APP.</p>
+            <h1>Check Your Weather information, wherever you are.</h1>
+            <p>
+              Search any city or use your current location to view live weather
+              conditions and a seven-day forecast.
+            </p>
+
+            <button className="weather-cta" type="button" onClick={showWeather}>
+              Check Weather
+            </button>
+          </div>
+
+          <div className="hero-visual">
+            <img
+              src={codingImage}
+              alt="Developer working on a computer"
+              className="hero-image"
+            />
+
+            <div className="hero-contact">
+              <p>
+                <strong>Jesse Bitrus</strong>
+              </p>
+
+              <a href="tel:08068684778">Phone: 08068684778</a>
+
+              <a
+                href="https://wa.me/2348025536255"
+                target="_blank"
+                rel="noreferrer"
+              >
+                WhatsApp: 08025536255
+              </a>
+            </div>
+
+          </div>
+    </section>
+
+      <section id="about" className="about-section">
+  <div className="about-content">
+    <p className="section-label">ABOUT JC WEATHER APP.</p>
+
+    <h2>Simple, reliable weather information for everyone.</h2>
+
+    <p className="about-description">
+      JC Weather-app helps you check current weather conditions and a seven-day
+      forecast for cities around the world. Search for a city or use your
+      current location to plan your day with confidence.
+    </p>
+
+    <div className="about-features">
+      <article className="about-card">
+        <span>🌍</span>
+        <h3>Worldwide Search</h3>
+        <p>Check weather conditions for cities across the globe.</p>
+      </article>
+
+      <article className="about-card">
+        <span>📍</span>
+        <h3>Use Your Location</h3>
+        <p>Get weather information for where you are right now.</p>
+      </article>
+
+      <article className="about-card">
+        <span>📅</span>
+        <h3>7-Day Forecast</h3>
+        <p>Prepare ahead with a clear weekly weather forecast.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+      <section id="contact" className="contact-section">
+        <div className="contact-content">
+          <p className="section-label">CONTACT US</p>
+
+          <h2>Need weather information? Get in touch.</h2>
+
+          <p className="contact-description">
+            Reach out by phone or WhatsApp. We will be glad to hear from you.
+          </p>
+
+          <div className="contact-actions">
+            <a className="contact-card" href="tel:08068684778">
+              <span>📞</span>
+              <div>
+                <h3>Phone</h3>
+                <p>08068684778</p>
+              </div>
+            </a>
+
+            <a
+              className="contact-card"
+              href="https://wa.me/2348025536255"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>💬</span>
+              <div>
+                <h3>WhatsApp</h3>
+                <p>08025536255</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+
+    <footer className="site-footer">
+      <div className="footer-content">
+        <div className="footer-brand">
+          <div>
+            <h2>JC Weather</h2>
+            <p>Phone/WhatsApp: +234 806 868 4778</p>
+            <p>Weather information, wherever you are.</p>
+          </div>
+        </div>
+
+        <div className="footer-links">
+          <h3>Quick Links</h3>
+
+          <button type="button" onClick={showHome}>
+            Home
+          </button>
+
+          <button type="button" onClick={showWeather}>
+            Check Weather
+          </button>
+        </div>
+
+        <div className="footer-socials">
+          <h3>Follow Us</h3>
+
+          <a
+            href="https://facebook.com/your-handle"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Facebook
+          </a>
+
+          <a
+            href="https://instagram.com/your-handle"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Instagram
+          </a>
+
+          <a
+            href="https://wa.me/2340000000000"
+            target="_blank"
+            rel="noreferrer"
+          >
+            WhatsApp
+          </a>
+
+          <a
+            href="https://x.com/your-handle"
+            target="_blank"
+            rel="noreferrer"
+          >
+            X (Twitter)
+          </a>
+
+          <a
+            href="https://linkedin.com/in/your-handle"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <p className="footer-bottom">
+        © {new Date().getFullYear()} JC Weather. All rights reserved.
+      </p>
+    </footer>
+  </main>
+)}
+
+
+  <div
+    className={`app weather-page ${
+      activePage === "weather" ? "weather-page--active" : ""
+    }`}
+  ></div>
+
       <div className="weather-container">
+        
 
         <header className="header">
           <h1>🌤️ World Weather</h1>
@@ -303,7 +563,7 @@ setCity(locationName);
       const isToday = index === 0;
 
       return (
-        <div
+        <div 
           className={`forecast-card ${isToday ? "today" : ""}`}
           key={date}
         >
@@ -352,6 +612,7 @@ setCity(locationName);
           </main>
         )}
 
+       
       </div>
     </div>
   );
