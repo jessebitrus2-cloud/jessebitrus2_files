@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop: Ember & Bean</title>
+    <link rel="stylesheet" href="css/shop.css">
+</head>
+<body>
+
+     <!--NAVIGATION BAR-->
+
+    <nav class="site-nav" style="position:sticky;">
+  <div class="brand">
+    <a href="home.html">Ember <span>&</span> Bean</a>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a data-screen="landing" href="home.html">Home</a></li>
+    <li><a data-screen="gallery" class="active" href="shop.html">Shop</a></li>
+    <li><a data-screen="dashboard" href="dashboard.html">Dashboard</a></li>
+    <li><a data-screen="order" href="order.html">Order</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+</nav>
+
+
+
+<!-- =========================
+ The Roast List
+==============================-->
+<section class="recipes">
+
+    <!-- Hidden radios driving the CSS-only filter. Each one must stay a
+         direct sibling of .filter-buttons and .recipe-grid (same parent,
+         placed before them) so the ~ selector below can reach both. -->
+    <input type="radio" name="roast-filter" id="filter-all" class="filter-radio" checked>
+    <input type="radio" name="roast-filter" id="filter-light" class="filter-radio">
+    <input type="radio" name="roast-filter" id="filter-medium" class="filter-radio">
+    <input type="radio" name="roast-filter" id="filter-dark" class="filter-radio">
+
+    <div class="recipes-title">
+        <h2>The roast list</h2>
+        <span>Six origins, rotating with the harvest. Every bag is 
+            stamped with <br>its batch number and roast date.</span>
+    </div>
+
+        <div class="filter-buttons">
+            <label for="filter-all">All</label>
+            <label for="filter-light">Light</label>
+            <label for="filter-medium">Medium</label>
+            <label for="filter-dark">Dark</label>
+        </div>
+    <div class="recipe-grid">
+
+        <!-- Card 1 -->
+
+        <div class="recipe-card" data-roast="medium">
+
+            <div class="image">
+                <img src="images/shop/colombia.jpg" alt="A Colombian Apple">
+            </div>
+
+            <span class="cone">
+                <img src="images/shop/cone1.jpg" alt="This is a cone">
+            </span>
+            <div class="content">
+                <span class="tags">Organic</span> <br>
+                <h3>Huila, Colombia</h3>
+
+                <p>
+                   Caramel, red apple, soft acidity.
+                </p>
+
+                <div class="details">
+
+                    <span class="value">roasted 07.14</span>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                    
+                    <span class="amount">$18</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Card 2 -->
+
+              <div class="recipe-card" data-roast="light">
+
+            <div class="image">
+                <img src="images/shop/euthopia.jpg" alt="A Bright Finish">
+            </div>
+            <span class="cone">
+                <img src="images/shop/cone1.jpg" alt="This is a cone">
+            </span>
+            <div class="content">
+                <span class="tags">Limited</span> <br>
+                <h3>Yirgacheffe, Ethiopia</h3>
+
+                <p>
+                    Jasmine, bergamot, bright finish.
+                </p>
+
+                <div class="details">
+
+                    <span class="value">roasted 07.15</span>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                    
+                    <span class="amount">$21</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Card 3 -->
+
+              <div class="recipe-card" data-roast="dark">
+
+            <div class="image">
+                <img src="images/shop/brazil.jpg" alt="A Dark Chocolate">
+            </div>
+            <span class="cone">
+                <img src="images/shop/cone1.jpg" alt="This is a cone">
+            </span>
+            <div class="content">
+                <span class="tags">Organic</span> <br>
+                <h3>Minas Gerais, Brazil</h3>
+
+                <p>
+                   Dark chocolate, hazelnut, low acid.
+                </p>
+
+                <div class="details">
+
+                    <span class="value">roasted 07.12</span>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                    
+                    <span class="amount">$16</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Card 4 -->
+
+              <div class="recipe-card" data-roast="medium">
+
+            <div class="image">
+                <img src="images/shop/cost-rica.jpg" alt="A Costa-rica honey">
+            </div>
+            <span class="cone">
+                <img src="images/shop/cone1.jpg" alt="This is a cone">
+            </span>
+            <div class="content">
+                <span class="tags">Limited</span> <br>
+                <h3>Tarrazu, Costa Rica</h3>
+
+                <p>
+                   Honey, orange zest, clean body.
+                </p>
+
+                <div class="details">
+
+                    <span class="value">roasted 07.10</span>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                    
+                    <span class="amount">$19</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Card 5 -->
+
+              <div class="recipe-card" data-roast="dark">
+
+            <div class="image">
+               <img src="images/shop/indonesia.jpg" alt="A Indonesian Cedar">
+            </div>
+            <span class="cone">
+                <img src="images/shop/cone1.jpg" alt="This is a cone">
+            </span>
+            <div class="content">
+                <span class="tags">Organic</span> <br>
+                <h3>Toraja, Indonesia</h3>
+
+                <p>
+                  Earthy, cedar, syrupy body.
+                </p>
+
+                <div class="details">
+
+                    <span class="value">roasted 07.09</span>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                    
+                    <span class="amount">$20</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Card 6 -->
+
+              <div class="recipe-card" data-roast="light">
+
+            <div class="image">
+                <img src="images/shop/kenya2.jpg" alt="A Kenyan Black-current">
+            </div>
+            <span class="cone">
+                <img src="images/shop/cone1.jpg" alt="This is a cone">
+            </span>
+            <div class="content">
+                <span class="tags">Limited</span> <br>
+                <h3>Nyeri, Kenya</h3>
+
+                <p>
+                   Blackcurrant, tomato, wine-like.
+                </p>
+
+                <div class="details">
+
+                    <span class="value">roasted 07.15</span>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                    
+                    <span class="amount">$22</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!--FOOTER-->
+
+<footer>
+  <div class="footer-main">
+    <div>
+      <div class="brand" style="margin-bottom:0.8rem;">
+        <a href="home.html">Ember <span>&</span> Bean</a>
+      </div>
+      <p>A small-batch roastery working directly with three family farms. We roast to order and ship within 48 hours, every time.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="X / Twitter">X</a>
+        <a href="#" aria-label="Email">@</a>
+      </div>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul class="footer-links">
+        <li><a data-screen="landing" href="Home.html">Home</a></li>
+        <li><a data-screen="gallery" href="Shop.html">Shop</a></li>
+        <li><a data-screen="dashboard" href="Dashboard.html">Dashboard</a></li>
+        <li><a data-screen="order" href="Order.html">Order</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Support</h4>
+      <ul class="footer-links">
+        <li><a href="#">Shipping & returns</a></li>
+        <li><a href="#">Subscription FAQ</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">Accessibility</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Stay in the loop</h4>
+      <p>New origins and roast notes, about once a month. No spam.</p>
+      <form class="footer-newsletter" onsubmit="return false;">
+        <input type="email" placeholder="you@email.com" aria-label="Email for newsletter">
+        <button type="submit" class="btn btn-primary" style="padding:0.6rem 1.1rem; font-size:0.85rem;">Join</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span>© 2026 Ember & Bean Roastery</span>
+    <span class="mono" id="pageLabel">Shop</span>
+  </div>
+</footer>
+
+
+</body>
+</html>

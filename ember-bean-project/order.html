@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order: Ember & Bean</title>
+    <link rel="stylesheet" href="css/order.css">
+</head>
+<body>
+    
+     <!--NAVIGATION BAR-->
+
+    <nav class="site-nav" style="position:sticky;">
+  <div class="brand">
+    <a href="home.html">Ember <span>&</span> Bean</a>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a data-screen="landing"  href="home.html">Home</a></li>
+    <li><a data-screen="gallery" href="shop.html">Shop</a></li>
+    <li><a data-screen="dashboard" href="dashboard.html">Dashboard</a></li>
+    <li><a data-screen="order" class="active" href="order.html">Order</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+</nav>
+
+<!--SECTION CONTAINER-->
+
+<div class="container">
+    <h1>Start a subscription</h1>
+    <p class="subtitle">
+        Choose how often you'd like bags to arrive. Change or cancel anytime from your dashboard.
+    </p>
+
+    <form>
+        <div class="row">
+            <div class="field">
+                <label>Full name</label>
+                <input type="text" placeholder="Ripji Dungji">
+            </div>
+            <div class="field">
+                <label>Email</label>
+                <input type="email" placeholder="ripjidungji@email.com">
+            </div>
+        </div>
+
+        <div class="field">
+            <label>Roast level</label>
+            <div class="options">
+                <button type="button">Light</button>
+                <button type="button">Medium</button>
+                <button type="button" class="active">Dark</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field">
+                <label>Delivery frequency</label>
+                <select>
+                    <option>Biweekly</option>
+                    <option>Weekly</option>
+                    <option>Monthly</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label>Bags per delivery</label>
+
+                <select>
+                    <option>2 bags</option>
+                    <option>1 bag</option>
+                    <option>3 bags</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="field">
+            <label>Delivery notes (optional)</label>
+            <textarea placeholder="Leave at the side door."></textarea>
+        </div>
+
+        <button class="submit-btn">
+            Start subscription
+        </button>
+    </form>
+</div>
+
+<!--FOOTER-->
+
+<footer>
+  <div class="footer-main">
+    <div>
+      <div class="brand" style="margin-bottom:0.8rem;">
+        <a href="home.html">Ember <span>&</span> Bean</a>
+      </div>
+      <p>A small-batch roastery working directly with three family farms. We roast to order and ship within 48 hours, every time.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="X / Twitter">X</a>
+        <a href="#" aria-label="Email">@</a>
+      </div>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul class="footer-links">
+        <li><a data-screen="landing" href="Home.html">Home</a></li>
+        <li><a data-screen="gallery" href="Shop.html">Shop</a></li>
+        <li><a data-screen="dashboard" href="Dashboard.html">Dashboard</a></li>
+        <li><a data-screen="order" href="Order.html">Order</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Support</h4>
+      <ul class="footer-links">
+        <li><a href="#">Shipping & returns</a></li>
+        <li><a href="#">Subscription FAQ</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">Accessibility</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Stay in the loop</h4>
+      <p>New origins and roast notes, about once a month. No spam.</p>
+      <form class="footer-newsletter" onsubmit="return false;">
+        <input type="email" placeholder="you@email.com" aria-label="Email for newsletter">
+        <button type="submit" class="btn btn-primary" style="padding:0.6rem 1.1rem; font-size:0.85rem;">Join</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span>© 2026 Ember & Bean Roastery</span>
+    <span class="mono" id="pageLabel">Order</span>
+  </div>
+</footer>
+</body>
+</html>

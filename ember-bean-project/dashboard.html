@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ember &amp; Bean — Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<!--NAVIGATION BAR-->
+
+    <nav class="site-nav" style="position:sticky;">
+  <div class="brand">
+    <a href="home.html">Ember <span>&</span> Bean</a>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a data-screen="landing"  href="home.html">Home</a></li>
+    <li><a data-screen="gallery" href="shop.html">Shop</a></li>
+    <li><a data-screen="dashboard" class="active" href="dashboard.html">Dashboard</a></li>
+    <li><a data-screen="order" href="order.html">Order</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+</nav>
+
+
+<!-- Tab-driving radios: must be siblings before .shell for the ~ combinator -->
+<input type="radio" name="dash-tab" id="t-overview" class="tab-radio" checked>
+<input type="radio" name="dash-tab" id="t-orders" class="tab-radio">
+<input type="radio" name="dash-tab" id="t-roast" class="tab-radio">
+<input type="radio" name="dash-tab" id="t-shipping" class="tab-radio">
+<input type="radio" name="dash-tab" id="t-account" class="tab-radio">
+
+<div class="shell">
+
+  <!-- VERTICAL SUB-NAVBAR (left column) -->
+  <aside class="sub-nav">
+    <div class="eyebrow">Subscriber</div>
+    <nav class="side-nav">
+      <label for="t-overview">Overview</label>
+      <label for="t-orders">Order history</label>
+      <label for="t-roast">Roast preferences</label>
+      <label for="t-shipping">Shipping</label>
+      <label for="t-account">Account</label>
+    </nav>
+  </aside>
+
+  <!-- MAIN PANELS -->
+  <main>
+
+    <!-- OVERVIEW -->
+    <section class="panel" id="p-overview">
+      <div class="page-head">
+        <h1>Welcome back, Maya</h1>
+        <p>Here's where things stand with your subscription.</p>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="eyebrow">Next shipment</div>
+          <div class="value">Batch #047</div>
+        </div>
+        <div class="stat">
+          <div class="eyebrow">Roast on file</div>
+          <div class="value">Medium</div>
+        </div>
+        <div class="stat">
+          <div class="eyebrow">Bags per delivery</div>
+          <div class="value">2 <small>bags</small></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Jump back in</h3>
+        <p class="hint">Pick up where you left off.</p>
+        <div class="quick-links">
+          <label class="btn-secondary" for="t-orders" style="cursor:pointer;">View order history</label>
+          <label class="btn-secondary" for="t-roast" style="cursor:pointer;">Edit roast preferences</label>
+          <label class="btn-secondary" for="t-shipping" style="cursor:pointer;">Check shipping details</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORDER HISTORY -->
+    <section class="panel" id="p-orders">
+      <div class="page-head">
+        <h1>Order history</h1>
+        <p>Every bag we've shipped you, most recent first.</p>
+      </div>
+      <div class="card" style="padding-top:6px; padding-bottom:6px;">
+        <div class="order-list">
+          <div class="order-row">
+            <span class="name">Yirgacheffe, Ethiopia — 2 bags</span>
+            <span class="meta"><span class="status transit">In transit</span><span class="date">Jul 19</span></span>
+          </div>
+          <div class="order-row">
+            <span class="name">Huila, Colombia — 2 bags</span>
+            <span class="meta"><span class="status delivered">Delivered</span><span class="date">Jul 05</span></span>
+          </div>
+          <div class="order-row">
+            <span class="name">Nyeri, Kenya — 1 bag</span>
+            <span class="meta"><span class="status delivered">Delivered</span><span class="date">Jun 21</span></span>
+          </div>
+          <div class="order-row">
+            <span class="name">Minas Gerais, Brazil — 2 bags</span>
+            <span class="meta"><span class="status delivered">Delivered</span><span class="date">Jun 07</span></span>
+          </div>
+          <div class="order-row">
+            <span class="name">Toraja, Indonesia — 1 bag</span>
+            <span class="meta"><span class="status delivered">Delivered</span><span class="date">May 24</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROAST PREFERENCES -->
+    <section class="panel" id="p-roast">
+      <div class="page-head">
+        <h1>Roast preferences</h1>
+        <p>This is what we'll default to on your next shipment — you can still swap it from the Shop.</p>
+      </div>
+      <div class="card">
+        <label class="field" style="margin-bottom:10px; display:block;">Roast level</label>
+        <input type="radio" name="roast-level" id="roast-light" class="tab-radio">
+        <input type="radio" name="roast-level" id="roast-medium" class="tab-radio" checked>
+        <input type="radio" name="roast-level" id="roast-dark" class="tab-radio">
+        <div class="segmented">
+          <label for="roast-light">Light</label>
+          <label for="roast-medium">Medium</label>
+          <label for="roast-dark">Dark</label>
+        </div>
+
+        <div class="select-row">
+          <div class="field">
+            <label for="grind">Grind type</label>
+            <select id="grind">
+              <option>Whole bean</option>
+              <option selected>Drip / filter</option>
+              <option>Espresso</option>
+              <option>French press</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="bags">Bags per delivery</label>
+            <select id="bags">
+              <option>1 bag</option>
+              <option selected>2 bags</option>
+              <option>3 bags</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn-primary">Save preferences</button>
+      </div>
+    </section>
+
+    <!-- SHIPPING -->
+    <section class="panel" id="p-shipping">
+      <div class="page-head">
+        <h1>Shipping</h1>
+        <p>Where your next bag is headed.</p>
+      </div>
+
+      <div class="card addr">
+        <h3>Delivery address</h3>
+        <address>
+          Maya Rodriguez<br>
+          14 Aso Drive, Asokoro<br>
+          Abuja, FCT, Nigeria
+        </address>
+        <button class="btn-secondary">Edit address</button>
+      </div>
+
+      <div class="card">
+        <div class="toggle-row">
+          <div class="copy">
+            <strong>Leave at the door</strong>
+            <span>Skip the doorbell, we'll leave it safely.</span>
+          </div>
+          <span class="switch">
+            <input type="checkbox" checked>
+            <span class="track"></span>
+            <span class="thumb"></span>
+          </span>
+        </div>
+        <div class="toggle-row">
+          <div class="copy">
+            <strong>Text me on delivery day</strong>
+            <span>A heads-up the morning it ships.</span>
+          </div>
+          <span class="switch">
+            <input type="checkbox">
+            <span class="track"></span>
+            <span class="thumb"></span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCOUNT -->
+    <section class="panel" id="p-account">
+      <div class="page-head">
+        <h1>Account</h1>
+        <p>Your profile and notification settings.</p>
+      </div>
+
+      <div class="card">
+        <div class="field-row">
+          <div class="field">
+            <label for="fullname">Full name</label>
+            <input type="text" id="fullname" value="Maya Rodriguez">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" value="maya@email.com">
+          </div>
+        </div>
+        <button class="btn-primary">Save changes</button>
+      </div>
+
+      <div class="card">
+        <div class="toggle-row">
+          <div class="copy">
+            <strong>Email me roast notes</strong>
+            <span>Tasting notes for every new batch.</span>
+          </div>
+          <span class="switch">
+            <input type="checkbox" checked>
+            <span class="track"></span>
+            <span class="thumb"></span>
+          </span>
+        </div>
+        <div class="toggle-row">
+          <div class="copy">
+            <strong>Marketing emails</strong>
+            <span>Occasional offers and new origins.</span>
+          </div>
+          <span class="switch">
+            <input type="checkbox">
+            <span class="track"></span>
+            <span class="thumb"></span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RIGHT RAIL -->
+  <aside class="roast-card">
+    <div class="roast-orb"></div>
+    <div class="eyebrow">Currently roasting</div>
+    <div class="batch">Batch #047</div>
+    <p>Medium roast, for your next shipment.</p>
+  </aside>
+
+  </div>
+
+
+<!--FOOTER-->
+
+<footer>
+  <div class="footer-main">
+    <div>
+      <div class="brand" style="margin-bottom:0.8rem;">
+        <a href="home.html">Ember <span>&</span> Bean</a>
+      </div>
+      <p>A small-batch roastery working directly with three family farms. We roast to order and ship within 48 hours, every time.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="X / Twitter">X</a>
+        <a href="#" aria-label="Email">@</a>
+      </div>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul class="footer-links">
+        <li><a data-screen="landing" href="Home.html">Home</a></li>
+        <li><a data-screen="gallery" href="Shop.html">Shop</a></li>
+        <li><a data-screen="dashboard" href="Dashboard.html">Dashboard</a></li>
+        <li><a data-screen="order" href="Order.html">Order</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Support</h4>
+      <ul class="footer-links">
+        <li><a href="#">Shipping & returns</a></li>
+        <li><a href="#">Subscription FAQ</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">Accessibility</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Stay in the loop</h4>
+      <p>New origins and roast notes, about once a month. No spam.</p>
+      <form class="footer-newsletter" onsubmit="return false;">
+        <input type="email" placeholder="you@email.com" aria-label="Email for newsletter">
+        <button type="submit" class="btn btn-primary" style="padding:0.6rem 1.1rem; font-size:0.85rem;">Join</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span>© 2026 Ember & Bean Roastery</span>
+    <span class="mono" id="pageLabel">Dashboard</span>
+  </div>
+</footer>
+
+
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home: Ember & Bean</title>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    
+    <!--NAVIGATION BAR-->
+
+    <nav class="site-nav" style="position:sticky;">
+  <div class="brand">
+    <a href="home.html">Ember <span>&</span> Bean</a>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a data-screen="landing" class="active" href="home.html">Home</a></li>
+    <li><a data-screen="gallery" href="shop.html">Shop</a></li>
+    <li><a data-screen="dashboard" href="dashboard.html">Dashboard</a></li>
+    <li><a data-screen="order" href="order.html">Order</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+</nav>
+
+
+
+<!--HOME LAYOUT-->
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="left">
+
+            <p class="small-title">
+                SMALL-BATCH • ROASTED TO ORDER
+            </p>
+
+            <h1>
+                Roasted the morning it ships.
+            </h1>
+
+            <p class="description">
+                We roast in batches of nine kilos, never more,
+                and ship within 48 hours so the beans reach
+                you at their peak.
+            </p>
+
+            <div class="buttons">
+
+                <button class="btn-primary">
+                  <a href="shop.html">Shop the roast list</a>
+                </button>
+
+                <button class="btn-secondary">
+                    <a href="order.html">Start a subscription</a>
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="right">
+
+            <div class="circle">
+
+                <div class="inner-circle">
+                    <small>BATCH #047</small>
+                    <h2>Medium roast</h2>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <span>01</span>
+
+            <h3>Sourced direct</h3>
+
+            <p>
+                Straight from trusted family farms to ensure
+                quality in every cup.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <span>02</span>
+
+            <h3>Roasted in small batches</h3>
+
+            <p>
+                Carefully roasted in nine-kilo batches for
+                freshness and consistency.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <span>03</span>
+
+            <h3>On your doorstep in days</h3>
+
+            <p>
+                Shipped within 48 hours so your coffee arrives
+                fresh and full of flavour.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!--FOOTER-->
+
+<footer>
+  <div class="footer-main">
+    <div>
+      <div class="brand" style="margin-bottom:0.8rem;">
+        <a href="home.html">Ember <span>&</span> Bean</a>
+      </div>
+      <p>A small-batch roastery working directly with three family farms. We roast to order and ship within 48 hours, every time.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="X / Twitter">X</a>
+        <a href="#" aria-label="Email">@</a>
+      </div>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul class="footer-links">
+        <li><a data-screen="landing" href="Home.html">Home</a></li>
+        <li><a data-screen="gallery" href="Shop.html">Shop</a></li>
+        <li><a data-screen="dashboard" href="Dashboard.html">Dashboard</a></li>
+        <li><a data-screen="order" href="Order.html">Order</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Support</h4>
+      <ul class="footer-links">
+        <li><a href="#">Shipping & returns</a></li>
+        <li><a href="#">Subscription FAQ</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">Accessibility</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Stay in the loop</h4>
+      <p>New origins and roast notes, about once a month. No spam.</p>
+      <form class="footer-newsletter" onsubmit="return false;">
+        <input type="email" placeholder="you@email.com" aria-label="Email for newsletter">
+        <button type="submit" class="btn btn-primary" style="padding:0.6rem 1.1rem; font-size:0.85rem;">Join</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span>© 2026 Ember & Bean Roastery</span>
+    <span class="mono" id="pageLabel">Home</span>
+  </div>
+</footer>
+
+
+</body>
+</html>
